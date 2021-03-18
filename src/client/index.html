@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Event Finder</title>
+        <meta name="author" content="Harmon Transfield">
+        <meta name="description" content="Find out what events are happening and save your favourites.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="js/getEventData.js"></script>
+        <link href="css/styles.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    </head>
+
+    <!--display events in march when the page loads-->
+    <body onload="getCurrentMonth()">
+        <div class="content-container">
+
+            <header class="heading-container">
+                <h1>EVENT FINDER</h1>
+                <hr>
+            </header>
+
+            <!--controls that the user can interact with-->
+            <p>To view more information about an event that you are interested in, click on
+                its name! Once added, you can view all the events you have tagged.
+            </p>
+
+            <div class="selection-btns">
+                <!--view events based on month-->
+                <div class="dropdown">
+                    <button class="btn">Months &#x25bc;</button>
+                    <div class="dropdown-content">
+                        <p onClick="filterEvents('month', 'March')">March</p>
+                        <p onClick="filterEvents('month', 'April')">April</p>
+                        <p onClick="filterEvents('month', 'May')">May</p>
+                        <p onClick="filterEvents('month', 'June')">June</p>
+                        <p onClick="filterEvents('month', 'July')">July</p>
+                        <p onClick="filterEvents('month', 'August')">August</p>
+                    </div>
+                </div>
+
+                <!--view events based on category-->
+                <div class="dropdown">
+                    <button class="btn">Category &#x25bc;</button>
+                    <div class="dropdown-content">
+                        <p onClick="filterEvents('category', 'Craft')">Craft</p>
+                        <p onClick="filterEvents('category', 'Educational')">Educational</p>
+                        <p onClick="filterEvents('category', 'Entertainment')">Entertainment</p>
+                        <p onClick="filterEvents('category','Shopping')">Shopping</p>  
+                        <p onClick="filterEvents('category', 'Sport')">Sport</p>  
+                    </div>
+                </div>       
+            </div>   
+            
+            <!--where the events will generate-->    
+            <h2 id="currently-viewing"></h2>
+            <div class="event-container">
+                <!--***display RESPONSE from server here***-->
+                <table class="event-lists" id=eventDisplay></table>
+                <script src="js/modal.js"></script>
+            </div>
+
+            <!--buttons to view all and favourites-->
+            <div class="selection-btns">
+                <button class="btn" id="allbtn" onClick="filterEvents('', '')">View All Events <i class="fa fa-bars"></i></button>
+                <button class="btn" id="favbtn" onClick="filterEvents('tagged', 1)">View My Favourites <i class='fa fa-star'></i></button>
+            </div>
+        </div>
+    </body>
+</html>

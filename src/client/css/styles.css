@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+/* \\ GENERAL STYLES */
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #0b283a;
+  margin: 0px;
+}
+
+/* \\ HEADING */
+.heading-container {
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+
+.heading-container h1 {
+  font-family: "Oswald", sans-serif;
+  color: #3e4279;
+  font-size: 50px;
+  margin-bottom: 0px;
+}
+
+.content-container {
+  background-color: white;
+  height: 100%;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
+}
+
+#currently-viewing {
+  text-align: center;
+}
+
+.event-container {
+  display: block;
+  height: 400px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: auto;
+  background-color: rgb(191, 210, 218);
+}
+
+.event-item {
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+  display: inline-block;
+  color: white;
+  font-size: 20px;
+  width: 310px;
+  height: 40px;
+  transition: all 0.2s ease-in-out;
+}
+
+.event-item:hover {
+  cursor: pointer;
+  filter: brightness(1.1);
+}
+
+.category-icon {
+  text-align: center;
+  display: inline-block;
+  font-size: 30px;
+  width: 50px;
+  height: inherit;
+}
+
+.remove.category-icon {
+  font-size: 30px;
+  color: white;
+  background-color: #e63c4d;
+  transition: all 0.2s ease-in-out;
+}
+
+.remove.category-icon:hover {
+  background-color: red;
+  cursor: pointer;
+}
+
+.emphasize {
+  font-weight: 900;
+  color: #3e4279;
+}
+
+/* \\ BUTTONS AND CONTROLS */
+#favbtn.btn {
+  background-image: linear-gradient(to right, #ffc3a0 0%, #ffafbd 100%);
+}
+
+.fa.fa-star.fav-star {
+  color: gold;
+}
+
+.selection-btns {
+  width: 90%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: center;
+}
+
+#allbtn.btn {
+  background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+}
+
+.tagbtn.btn:disabled,
+button[disabled] {
+  background-image: linear-gradient(to left, #858585 0%, #adadad 100%);
+  color: grey;
+}
+
+.btn {
+  background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content p {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition-duration: 0.4s;
+  margin: 0;
+}
+
+.dropdown-content p:hover {
+  background-color: rgb(46, 46, 46);
+  color: white;
+  cursor: pointer;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  width: 350px; /* Could be more or less, depending on screen size */
+}
+
+.modal-content table {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: left;
+}
+
+.modal-content table tr:nth-last-child(even) {
+  background-color: #f2f2f2;
+}
+
+.modal-content h1 {
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+}
+
+.modal-content p {
+  text-align: center;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.tagbtn.btn {
+  width: 60px;
+  text-align: center;
+  background-image: linear-gradient(to left, #ffc3a0 0%, #ffafbd 100%);
+  display: block;
+}
